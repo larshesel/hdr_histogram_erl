@@ -34,7 +34,7 @@ clean:
 	-rm -rvf deps ebin .eunit
 
 perf: build
-	$(CC) -ggdb -c -O3 -ffast-math -std=c99 -I c_src perf/hh.c -o perf/hh.o
+	$(CC) -ggdb -c -O3 -ffast-math -std=gnu99 -I c_src perf/hh.c -o perf/hh.o
 	$(CC) -ggdb -lm -o perf/hh c_src/hdr_histogram.o perf/hh.o
 	perf/hh 1000000 1000000 1
 	perf/hh 100000000 1000000 1
